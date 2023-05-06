@@ -27,7 +27,7 @@ const AuthRoute = ({ children }: Props): React.ReactElement => {
   //   });
   // }
   const status = useCheckLogin();
-  return status === 1 ? children : <Navigate to="/login" />;
+  return status ? children : <Navigate to="/login" />;
 };
 
 export default AuthRoute;
