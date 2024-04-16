@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Ucluverse/static/css/main.5611fe64.css",
-    "main.js": "/Ucluverse/static/js/main.d13884e9.js",
+    "main.js": "/Ucluverse/static/js/main.77728d8c.js",
     "static/media/단체사진.jpg": "/Ucluverse/static/media/단체사진.9153c497d8a945e9b315.jpg",
     "static/media/메인헤더글.svg": "/Ucluverse/static/media/메인헤더글.1f3070e0303b3a0904ed24b469163f6c.svg",
     "static/media/other-main.jpg": "/Ucluverse/static/media/other-main.51f93bcbc9821f815c79.jpg",
@@ -47,10 +47,10 @@
     "static/media/검색아이콘.svg": "/Ucluverse/static/media/검색아이콘.9f0f84c08b80391647bc1c8cdf68ee91.svg",
     "static/media/오른쪽화살표.svg": "/Ucluverse/static/media/오른쪽화살표.c882c63bbb438cbc3d80a562398d73ab.svg",
     "main.5611fe64.css.map": "/Ucluverse/static/css/main.5611fe64.css.map",
-    "main.d13884e9.js.map": "/Ucluverse/static/js/main.d13884e9.js.map"
+    "main.77728d8c.js.map": "/Ucluverse/static/js/main.77728d8c.js.map"
   },
   "entrypoints": [
     "static/css/main.5611fe64.css",
-    "static/js/main.d13884e9.js"
+    "static/js/main.77728d8c.js"
   ]
 }
