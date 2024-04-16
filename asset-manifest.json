@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Ucluverse/static/css/main.5611fe64.css",
-    "main.js": "/Ucluverse/static/js/main.42a1c1b2.js",
+    "main.js": "/Ucluverse/static/js/main.d0ad597c.js",
     "static/media/단체사진.jpg": "/Ucluverse/static/media/단체사진.9153c497d8a945e9b315.jpg",
     "static/media/메인헤더글.svg": "/Ucluverse/static/media/메인헤더글.1f3070e0303b3a0904ed24b469163f6c.svg",
     "static/media/other-main.jpg": "/Ucluverse/static/media/other-main.51f93bcbc9821f815c79.jpg",
@@ -33,12 +33,12 @@
     "static/media/로고3.svg": "/Ucluverse/static/media/로고3.3f8d643e725755bf4fa2e457e5bba4d0.svg",
     "static/media/slick.svg": "/Ucluverse/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/Ucluverse/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "index.html": "/Ucluverse/index.html",
     "static/media/slick.ttf": "/Ucluverse/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/profile-white.svg": "/Ucluverse/static/media/profile-white.8ea85c202b73168447ea299bbe202fa8.svg",
     "static/media/profile.svg": "/Ucluverse/static/media/profile.23af642f7618ca4205fa239da5d2c7f0.svg",
     "static/media/왼쪽화살표.svg": "/Ucluverse/static/media/왼쪽화살표.92efc06e4597938465c7862e07a80650.svg",
     "static/media/캐릭터.svg": "/Ucluverse/static/media/캐릭터.bd65d16a41b88f4ec2fc0a52e9b64ce1.svg",
-    "index.html": "/Ucluverse/index.html",
     "static/media/github.svg": "/Ucluverse/static/media/github.833b63e28cadf07403bc81451d30b858.svg",
     "static/media/slick.woff": "/Ucluverse/static/media/slick.295183786cd8a1389865.woff",
     "static/media/instagram.svg": "/Ucluverse/static/media/instagram.813fd06b51b26e101fbbdde32e64af13.svg",
@@ -47,10 +47,10 @@
     "static/media/검색아이콘.svg": "/Ucluverse/static/media/검색아이콘.9f0f84c08b80391647bc1c8cdf68ee91.svg",
     "static/media/오른쪽화살표.svg": "/Ucluverse/static/media/오른쪽화살표.c882c63bbb438cbc3d80a562398d73ab.svg",
     "main.5611fe64.css.map": "/Ucluverse/static/css/main.5611fe64.css.map",
-    "main.42a1c1b2.js.map": "/Ucluverse/static/js/main.42a1c1b2.js.map"
+    "main.d0ad597c.js.map": "/Ucluverse/static/js/main.d0ad597c.js.map"
   },
   "entrypoints": [
     "static/css/main.5611fe64.css",
-    "static/js/main.42a1c1b2.js"
+    "static/js/main.d0ad597c.js"
   ]
 }
