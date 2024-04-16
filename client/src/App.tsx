@@ -23,6 +23,7 @@ import { onRefreshUpdate } from './Util/helpers/Auth/Auth';
 axios.defaults.withCredentials = true;
 
 const App = () => {
+  // PREVIOUS
   // const setClubList = useSetRecoilState(ClubListState);
   // const setDepartmentList = useSetRecoilState(DepartmentListState);
   // useEffect(() => {

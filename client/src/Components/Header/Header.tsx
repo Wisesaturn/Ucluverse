@@ -1,17 +1,34 @@
-import React, { ReactElement } from 'react';
-import { useRecoilValue } from 'recoil';
+import { ReactElement } from 'react';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import LinkButton from '../Button/LinkButton';
 import { HeaderContainer, HeaderLinkContainer, UserInfoContainer, BackGround } from './style';
 import Assets from '../../Assets';
 import { userState } from '../../Recoil/User';
 import { theme } from '../../Recoil/Theme';
-import { onLogout } from '../../Util/helpers/Auth/Auth';
 
 function Header(): ReactElement {
   const { logoImg, logoImgWhite, profileImg, profileImgWhite, alarmImg, logoutImg, mypageImg } =
     Assets;
   const user = useRecoilValue(userState);
   const themeColor = useRecoilValue(theme);
+  const setUser = useSetRecoilState(userState);
+
+  const onLogout = () => {
+    setUser({
+      userIdx: 0,
+      name: '',
+      departmentIdx: 0,
+      nickname: '',
+      studentId: 0,
+      email: '',
+      BODList: null,
+      isAdmin: false,
+      profilePhoto: '',
+      phoneNumber: '',
+      starredClubs: [],
+    });
+    window.location.href = '/Ucluverse';
+  };
 
   return (
     <HeaderContainer>

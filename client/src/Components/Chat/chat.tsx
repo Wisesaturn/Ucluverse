@@ -34,7 +34,7 @@ function Chat(socketId: any) {
       e.target[0].value = '';
       socket.emit('SEND_MESSAGE', {
         socketId: socketId.socketId,
-        userName: user.user.name,
+        userName: user.name,
         message,
       });
     }

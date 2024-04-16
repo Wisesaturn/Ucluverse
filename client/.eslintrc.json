@@ -36,6 +36,13 @@
         "endOfLine": "auto"
       }
     ],
+      "no-warning-comments": [
+      "warn",
+      {
+        "terms": ["PREVIOUS"],
+        "location": "anywhere"
+      }
+    ],
     /****************************************/
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],

@@ -22,10 +22,12 @@ export const userState = atom<UserType>({
 
 export const userDataState = selector({
   key: 'userDataState',
-  get: async () => {
-    const res = await api.get('/auth/isLogin');
+  get: async ({ get }) => {
+    const user = get(userState);
+    // PREVIOUS
+    // const res = await api.get('/auth/isLogin');
 
-    return res.data;
+    return user;
   },
   set: ({ set }, newValue) => {
     set(userState, newValue as UserType);
