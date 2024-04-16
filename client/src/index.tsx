@@ -14,7 +14,7 @@ ReactDOM.render(
     <RecoilRoot>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <Router>
+        <Router basename="/Ucluverse">
           <ScrollToTop />
           <App />
         </Router>

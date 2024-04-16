@@ -6,27 +6,63 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1"
+    />
     <meta content="yes" name="apple-mobile-web-app-capable" />
-    <meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport" />
+    <meta
+      content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
     <meta name="theme-color" content="#000000" />
     <meta name="google-signin-client_id" />
-    <meta
-      name="description"
-      content="React를 이용한 아주대학교 파란학기 프로젝트"
-    />
+    <meta name="description" content="React를 이용한 아주대학교 파란학기 프로젝트" />
 
     <!-- meta tag for Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ucluverse.com">
-    <meta property="og:title" content="유클러버스">
-    <meta property="og:image" content="%PUBLIC_URL%/forMetatag.png">
-    <meta property="og:description" content="대학생활이 어우르는 공간">
-    <meta property="og:site_name" content="유클러버스">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ucluverse.com" />
+    <meta property="og:title" content="유클러버스" />
+    <meta property="og:image" content="%PUBLIC_URL%/forMetatag.png" />
+    <meta property="og:description" content="대학생활이 어우르는 공간" />
+    <meta property="og:site_name" content="유클러버스" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafrex/spa-github-pages
+      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
+      // ----------------------------------------------------------------------
+      // This script checks to see if a redirect is present in the query string
+      // and converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function (l) {
+        if (l.search) {
+          var q = {};
+          l.search
+            .slice(1)
+            .split('&')
+            .forEach(function (v) {
+              var a = v.split('=');
+              q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+            });
+          if (q.p !== undefined) {
+            window.history.replaceState(
+              null,
+              null,
+              l.pathname.slice(0, -1) + (q.p || '') + (q.q ? '?' + q.q : '') + l.hash,
+            );
+          }
+        }
+      })(window.location);
+    </script>
+
     <title>Ucluverse : 대학 생활이 어우르는 공간</title>
   </head>
   <body>
@@ -43,9 +79,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-  <script
-    src="https://apis.google.com/js/platform.js?onload=init"
-    async
-    defer
-  ></script>
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 </html>

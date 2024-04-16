@@ -10,7 +10,7 @@ const Lottie = (data: any, isLoop: boolean, imgWidth: number, imgHeight: number,
     lottie.loadAnimation({
       container: DOM.current,
       renderer: 'svg',
-      loop: isLoop ? 1 : 0,
+      loop: isLoop,
       autoplay: true,
       animationData: data,
     });
