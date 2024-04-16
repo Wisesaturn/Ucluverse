@@ -1,15 +1,14 @@
-import React, { ReactElement, ReactEventHandler, useRef } from 'react';
+import React, { ReactElement, ReactEventHandler, useRef, useState, useEffect } from 'react';
+import axios from 'axios';
 import MainBoard from './MainBoard';
 import { MainBoardContainerDiv } from './style';
 import noticeImg from '../../../Assets/공지사항.png';
 import FAQImg from '../../../Assets/FAQ.png';
-import { useState, useEffect } from 'react';
 import { PostTitleType } from '../../../Types/PostType';
-import axios from 'axios';
 import { useScrollFadeIn } from '../../../Hooks';
 import api from '../../../Util/helpers/Auth/Api';
 
-//테스트용 더미데이터
+// 테스트용 더미데이터
 const posts = [
   { title: '안녕하세요', id: 1 },
   { title: '안녕하세요2', id: 2 },

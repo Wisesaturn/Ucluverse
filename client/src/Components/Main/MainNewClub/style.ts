@@ -58,7 +58,8 @@ export const NewClubContainer = styled.section`
       height: 2.5rem;
       border: none;
       border-radius: 100% 0% 0% 0%;
-      background: transparent linear-gradient(180deg, #63239b 0%, #9239df 100%) 0% 0% no-repeat padding-box;
+      background: transparent linear-gradient(180deg, #63239b 0%, #9239df 100%) 0% 0% no-repeat
+        padding-box;
       box-shadow: 1px 1px 4px #a45de2;
       background-color: black;
 

@@ -9,7 +9,7 @@ const api = axios.create({
 });
 
 api.interceptors.response.use(
-  function (response) {
+  (response) => {
     console.log(response);
     return response;
   },

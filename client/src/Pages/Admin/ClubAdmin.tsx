@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { ReactElement } from 'react';
+import { useEffect, useState, ReactElement } from 'react';
 import { useParams } from 'react-router-dom';
 import AdminEnrollmentForm from '../../Components/Admin/ClubAdmin/Enrollment/EnrollmentForm';
 import AdminEnrollmentList from '../../Components/Admin/ClubAdmin/Enrollment/EnrollmentList';
@@ -16,11 +15,9 @@ const ClubAdmin = (): ReactElement => {
   const [idx, setIdx] = useState<number>(0);
   const [club, setClub] = useState<ClubType | null>(null);
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/clubs/club/${clubId}`)
-      .then((res) => {
-        setClub(res.data.res.clubs);
-      });
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/clubs/club/${clubId}`).then((res) => {
+      setClub(res.data.res.clubs);
+    });
   }, []);
   return (
     <>

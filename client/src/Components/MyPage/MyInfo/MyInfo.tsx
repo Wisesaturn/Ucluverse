@@ -1,6 +1,5 @@
 import axios from 'axios';
-import React, { ChangeEvent, ReactElement, RefObject, useRef, useState } from 'react';
-import { useEffect } from 'react';
+import React, { ChangeEvent, ReactElement, RefObject, useRef, useState, useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { userDataState, userState } from '../../../Recoil/User';
 import { InfoRightContainer, InfoContainer, InfoDetail, ImageDetail } from './style';
@@ -49,7 +48,7 @@ const MyInfo = (): ReactElement => {
           studentId: studentIdModify,
           phoneNumber: phoneModify,
           nickname: nicknameModify,
-          profilePhoto: profilePhoto,
+          profilePhoto,
           departmentIdx: departmentIdxList.indexOf(department) - 1,
         });
         setModify();
@@ -97,7 +96,11 @@ const MyInfo = (): ReactElement => {
         <div>
           <h3>성명</h3>
           {isModify ? (
-            <input value={nameModify} onChange={(e) => setNameModify(e.target.value)} ref={nameRef}></input>
+            <input
+              value={nameModify}
+              onChange={(e) => setNameModify(e.target.value)}
+              ref={nameRef}
+            ></input>
           ) : (
             <h3>{user.name}</h3>
           )}
@@ -117,7 +120,11 @@ const MyInfo = (): ReactElement => {
         <div>
           <h3>학과</h3>
           {isModify ? (
-            <select ref={departmentRef} value={department} onChange={(e) => setDepartment(e.target.value)}>
+            <select
+              ref={departmentRef}
+              value={department}
+              onChange={(e) => setDepartment(e.target.value)}
+            >
               {departmentList.map((department) => (
                 <option value={department} key={department}>
                   {department}
@@ -131,7 +138,11 @@ const MyInfo = (): ReactElement => {
         <div>
           <h3>전화번호</h3>
           {isModify ? (
-            <input value={phoneModify} onChange={(e) => setPhoneModify(e.target.value)} ref={phoneRef}></input>
+            <input
+              value={phoneModify}
+              onChange={(e) => setPhoneModify(e.target.value)}
+              ref={phoneRef}
+            ></input>
           ) : (
             <h3>{user.phoneNumber}</h3>
           )}
@@ -146,7 +157,13 @@ const MyInfo = (): ReactElement => {
       </InfoDetail>
       <InfoRightContainer>
         <ImageDetail>
-          <div>{user.profilePhoto ? <img src={user.profilePhoto} /> : <span>이미지를 등록해주세요.</span>}</div>
+          <div>
+            {user.profilePhoto ? (
+              <img src={user.profilePhoto} />
+            ) : (
+              <span>이미지를 등록해주세요.</span>
+            )}
+          </div>
           <div>캐릭터가 들어갈 예정</div>
         </ImageDetail>
       </InfoRightContainer>

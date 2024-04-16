@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const MainBoardDiv = styled.article`
-  width : calc(50% - 1.5rem - (${(props) => props.theme.layout.gutter} / 2));
+  width: calc(50% - 1.5rem - (${(props) => props.theme.layout.gutter} / 2));
   height: 12rem;
   background: white;
   box-shadow: 3px 3px 0.625rem var(--shadow-purple-0);
   padding-left: 1.5rem;
   padding-top: 1.563rem;
-
 
   img {
     height: 18px;
@@ -28,35 +27,35 @@ export const MainBoardDiv = styled.article`
     a {
       height: 1.25rem;
     }
-    a:nth-child(n+2) {
-        padding-top: 6px;
-      }
+    a:nth-child(n + 2) {
+      padding-top: 6px;
+    }
   }
 
   @media (max-width: 768px) {
-    width : calc(90vw - 1.5rem);
-    margin : 1rem auto;
+    width: calc(90vw - 1.5rem);
+    margin: 1rem auto;
   }
 `;
 
 export const MainBoardContainerDiv = styled.section`
   width: 90vw;
-  margin : 0 auto;
+  margin: 0 auto;
 
   section {
     display: flex;
-    justify-content : space-between;
-    width : 100%;
-    max-width : ${(props) => props.theme.layout.maxWidth};
+    justify-content: space-between;
+    width: 100%;
+    max-width: ${(props) => props.theme.layout.maxWidth};
     margin: 8rem auto;
   }
 
   @media (max-width: 768px) {
-      width : 100%;
-      margin-top : -10rem;
+    width: 100%;
+    margin-top: -10rem;
 
-      section {
-        flex-direction: column;
-      }
+    section {
+      flex-direction: column;
+    }
   }
 `;

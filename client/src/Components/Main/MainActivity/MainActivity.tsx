@@ -1,13 +1,12 @@
-import React, { MouseEventHandler, ReactElement, useEffect, useRef } from 'react';
+import React, { MouseEventHandler, ReactElement, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
+import axios from 'axios';
 import { ActivityContainer } from './style';
 import leftArrowImg from '../../../Assets/left-arrow.png';
 import rightArrowImg from '../../../Assets/right-arrow.png';
 import activityImg from '../../../Assets/활동사진.png';
-import Slider from 'react-slick';
 import { ActivityPostType } from '../../../Types/PostType';
-import { useState } from 'react';
-import axios from 'axios';
 import { useScrollFadeIn } from '../../../Hooks';
 import api from '../../../Util/helpers/Auth/Api';
 
@@ -22,9 +21,11 @@ const MainActivity = (): ReactElement => {
   const [activityList, setActivityList] = useState<ActivityPostType[]>([]);
   const activityRef = useRef<HTMLDivElement[]>([]);
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/postings/main?boardName=활동 게시판`).then((res) => {
-      setActivityList(res.data.res.postings);
-    });
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/postings/main?boardName=활동 게시판`)
+      .then((res) => {
+        setActivityList(res.data.res.postings);
+      });
   }, []);
   const PrevArrow = (props: buttonProps) => {
     const { className, style, onClick } = props;
@@ -94,8 +95,8 @@ const MainActivity = (): ReactElement => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    infinite: activityList.length > 3 ? true : false,
-    centerMode: activityList.length > 3 ? true : false,
+    infinite: activityList.length > 3,
+    centerMode: activityList.length > 3,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
   };
@@ -110,7 +111,10 @@ const MainActivity = (): ReactElement => {
       </article>
       <Slider {...settings}>
         {activityList.map((activity, idx) => (
-          <div ref={(el: HTMLInputElement) => (activityRef.current[idx] = el)} key={activity.createdAt}>
+          <div
+            ref={(el: HTMLInputElement) => (activityRef.current[idx] = el)}
+            key={activity.createdAt}
+          >
             <Link to={`/club/${activity.clubIdx}/post?postId=${activity.postingIdx}`}>
               <img src={activity.path ?? ''} width="468px" height="350px" />
             </Link>

@@ -1,11 +1,10 @@
-import React, { ReactElement, useEffect } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { ClubContainer, ImgContainer } from './style';
 import titleImg from '../../../Assets/활동 우수 동아리.png';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { ClubType } from '../../../Types/ClubType';
 import { useScrollFadeIn } from '../../../Hooks';
-import axios from 'axios';
 import api from '../../../Util/helpers/Auth/Api';
 
 const MainGreatClub = (): ReactElement => {

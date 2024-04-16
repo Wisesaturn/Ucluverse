@@ -48,12 +48,12 @@ const Metaverse = () => {
 
     socket.on('changeMove', (list: any, temp: any) => {
       setUsers(list);
-      if (temp !== null)
-        (function () {
+      if (temp !== null) {
+        (() => {
           setBackground((v: any) => temp ?? v);
           setMove(false);
         })();
-      else setMove(true);
+      } else setMove(true);
     });
   }, []);
 
@@ -62,15 +62,21 @@ const Metaverse = () => {
   }, [user]);
 
   useEffect(() => {
-    if (tempBackground.top === background.top && tempBackground.left === background.left)
+    if (tempBackground.top === background.top && tempBackground.left === background.left) {
       setMarginBackground((v: any) => ({ top: background.top, left: background.left }));
+    }
   }, [background, tempBackground]);
 
   return (
     <MetaverseContainer>
       <Chat socketId={socketId} />
       <Background marginBackground={marginBackground} />
-      <Character socketId={socketId} users={users} marginBackground={marginBackground} move={move} />
+      <Character
+        socketId={socketId}
+        users={users}
+        marginBackground={marginBackground}
+        move={move}
+      />
     </MetaverseContainer>
   );
 };

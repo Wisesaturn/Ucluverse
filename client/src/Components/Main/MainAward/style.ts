@@ -57,7 +57,6 @@ export const AwardContainer = styled.section`
   }
 `;
 
-
 export const AwardDiv = styled.div`
   cursor: pointer;
   width: 100%;
@@ -80,8 +79,8 @@ export const AwardDiv = styled.div`
     text-align: center;
     width: 19rem;
     height: 8.188rem;
-    background: transparent linear-gradient(180deg, #0e131100 0%, #151e1bbf 45%, #22342f 100%) 0% 0% no-repeat
-      padding-box;
+    background: transparent linear-gradient(180deg, #0e131100 0%, #151e1bbf 45%, #22342f 100%) 0% 0%
+      no-repeat padding-box;
     border-radius: 0px 0px 5px 5px;
     opacity: 1;
     justify-content: center;

@@ -13,15 +13,16 @@ export const MainHeaderDiv = styled.section`
     width: 100vw;
     height: 68vh;
   }
-  .content, .content > article {
+  .content,
+  .content > article {
     z-index: 999;
     .main-header {
       //width : 27vw;
       width: 350px;
-      position : relative;
+      position: relative;
     }
     & > span {
-      position : static;
+      position: static;
       top: 14.688rem;
       left: 32.563rem;
       width: 16.875rem;
@@ -39,43 +40,42 @@ export const MainHeaderDiv = styled.section`
     margin-top: 2rem;
   }
 
-
   /* lottie data */
   #lottie {
     @media (min-width: 1024px) {
-      left : 24%;
-      top : 12%;
-      }
+      left: 24%;
+      top: 12%;
+    }
   }
 
   #lottie2 {
     @media (min-width: 1024px) {
-      left : 63.5%;
-      top : 22%;
-      }
+      left: 63.5%;
+      top: 22%;
+    }
   }
 
   #lottie3 {
-    animation : flowLeft 20s infinite;
-    top : 24%;
-    position : absolute;
-    display : block;
+    animation: flowLeft 20s infinite;
+    top: 24%;
+    position: absolute;
+    display: block;
   }
 
   #lottieBG {
-    top : 15%;
-    left : 0%;
-    display : block;
-    position : absolute;
+    top: 15%;
+    left: 0%;
+    display: block;
+    position: absolute;
   }
 
   @keyframes flowLeft {
-      from {
-        left : 90%;
-      }
-      to {
-        left : -30%;
-      }
+    from {
+      left: 90%;
+    }
+    to {
+      left: -30%;
+    }
   }
 `;
 
@@ -87,10 +87,10 @@ export const SearchBarDiv = styled.section`
   background: white;
   box-shadow: 6px 3px 0.625rem var(--shadow-purple-0);
   overflow: hidden;
-  justify-content : center;
+  justify-content: center;
 
-  @media (max-width:768px) {
-    width : 75vw;
+  @media (max-width: 768px) {
+    width: 75vw;
   }
 `;
 
@@ -112,12 +112,13 @@ export const SearchDataContainer = styled.section`
       color: var(--grey2-8);
 
       strong {
-        color : var(--primary-0);
-        font-weight : 600;
+        color: var(--primary-0);
+        font-weight: 600;
       }
     }
 
-    span, strong {
+    span,
+    strong {
       font-size: 14px;
       letter-spacing: -0.075rem;
     }
@@ -128,33 +129,33 @@ export const SearchDataContainer = styled.section`
   }
 
   @media (max-width: 768px) {
-    width : 75vw;
+    width: 75vw;
   }
 `;
 
 export const SearchBarContainer = styled.section`
-  width : 100%;
-  max-width : ${(props) => props.theme.layout.maxWidth};
+  width: 100%;
+  max-width: ${(props) => props.theme.layout.maxWidth};
 
   input {
-    width : calc(100% - 2.5rem);
+    width: calc(100% - 2.5rem);
     font: normal normal normal 0.875rem Noto Sans KR;
     letter-spacing: -0.04rem;
     height: 2.5rem;
     text-indent: 1.25rem;
     border: none;
   }
-  
+
   input:focus {
     outline: none;
   }
-  
+
   button {
     cursor: pointer;
-    position : relative;
-    float : right;
+    position: relative;
+    float: right;
     height: 2.5rem;
-    width : 2.5rem;
+    width: 2.5rem;
     background-color: var(--primary-l1);
     border: none;
 
@@ -170,15 +171,15 @@ export const SearchBarContainer = styled.section`
 
   @media (max-width: 768px) {
     input {
-      width : calc(100%-2rem);
+      width: calc(100%-2rem);
     }
 
-    button  {
-      width : 2rem;
+    button {
+      width: 2rem;
 
       img {
-        width : 1rem;
+        width: 1rem;
       }
     }
   }
-`
+`;

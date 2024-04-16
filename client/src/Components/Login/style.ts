@@ -19,40 +19,39 @@ export const LoginButtonContainer = styled.div`
   margin-top: 3rem;
   text-align: center;
   vertical-align: middle;
-  
+
   /* button */
   button {
-    display : flex;
-    cursor : pointer;
-    outline : none;
-    border : none;
-    padding : .6rem 2.4rem;
-    background : white;
-    font-weight : bold;
+    display: flex;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0.6rem 2.4rem;
+    background: white;
+    font-weight: bold;
     box-shadow: 1px 1px 1px #00000026;
-    transition : .3s ease;
+    transition: 0.3s ease;
 
     :hover {
-      transition : .3s ease;
+      transition: 0.3s ease;
       box-shadow: 3px 3px 3px #00000026;
     }
-    
+
     /* logo */
     img {
-      width : 24px;
-      height : 24px;
-      margin-right : 24px;
+      width: 24px;
+      height: 24px;
+      margin-right: 24px;
     }
-    
+
     p {
-      font-family : 'Roboto Medium';
-      font-size : 1rem;
-      color : grey;
+      font-family: 'Roboto Medium';
+      font-size: 1rem;
+      color: grey;
     }
   }
-  
-  box-shadow : 1px 1px 2px 5px rgba(0,0,0, 0);
-  
+
+  box-shadow: 1px 1px 2px 5px rgba(0, 0, 0, 0);
 `;
 
 export const InputContainer = styled.div`

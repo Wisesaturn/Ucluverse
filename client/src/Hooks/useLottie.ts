@@ -3,20 +3,14 @@ import lottie from 'lottie-web';
 
 interface lottieInfo {}
 
-const Lottie = (
-  data: any,
-  isLoop: boolean | number = false,
-  imgWidth: number,
-  imgHeight: number,
-  speed: number = 1,
-) => {
+const Lottie = (data: any, isLoop: boolean, imgWidth: number, imgHeight: number, speed = 1) => {
   const DOM = useRef<any>();
 
   useEffect(() => {
     lottie.loadAnimation({
       container: DOM.current,
       renderer: 'svg',
-      loop: isLoop,
+      loop: isLoop ? 1 : 0,
       autoplay: true,
       animationData: data,
     });

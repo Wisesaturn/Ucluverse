@@ -1,7 +1,12 @@
 import { useEffect } from 'react';
-import singInImg from '../../Assets/로그인.png';
 import { toast } from 'react-toastify';
-import { LoginButtonContainer, LoginContentContainer, LoginDetailSpan, LoginMainContainer } from './style';
+import singInImg from '../../Assets/로그인.png';
+import {
+  LoginButtonContainer,
+  LoginContentContainer,
+  LoginDetailSpan,
+  LoginMainContainer,
+} from './style';
 import GoogleIcon from '../../Assets/icon/g-logo.png';
 import { onLogin } from '../../Util/helpers/Auth/Auth';
 
@@ -22,7 +27,7 @@ const LoginMain = () => {
       draggable: true,
       progress: undefined,
     });
-  const gapi = window.gapi;
+  const { gapi } = window;
   const init = () => {
     gapi.load('auth2', () => {
       gapi.auth2.init({
@@ -31,7 +36,9 @@ const LoginMain = () => {
       const options = new gapi.auth2.SigninOptionsBuilder();
       options.setPrompt('select_account');
       options.setScope('email profile');
-      gapi.auth2.getAuthInstance().attachClickHandler('GgCustomLogin', options, onSignIn, onSignInFailure);
+      gapi.auth2
+        .getAuthInstance()
+        .attachClickHandler('GgCustomLogin', options, onSignIn, onSignInFailure);
     });
   };
   const checkAjouMail = (email: string) => {

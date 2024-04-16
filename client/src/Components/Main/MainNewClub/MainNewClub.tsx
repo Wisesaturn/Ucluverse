@@ -1,11 +1,9 @@
-import React, { ReactElement, useRef, useState } from 'react';
-import { NewClubContainer } from './style';
-import clubImg from '../../../Assets/test1.jpeg';
-import newClubImg from '../../../Assets/신설 동아리.png';
+import React, { ReactElement, useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ClubType } from '../../../Types/ClubType';
-import { useEffect } from 'react';
 import axios from 'axios';
+import { NewClubContainer } from './style';
+import newClubImg from '../../../Assets/신설 동아리.png';
+import { ClubType } from '../../../Types/ClubType';
 import { useScrollFadeIn } from '../../../Hooks';
 import api from '../../../Util/helpers/Auth/Api';
 

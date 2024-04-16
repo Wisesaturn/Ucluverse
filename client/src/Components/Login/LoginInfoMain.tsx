@@ -1,13 +1,13 @@
-import React, { ReactElement, useCallback, useRef } from 'react';
-import FloatInput from '../Input/Input';
-import singUpImg from '../../Assets/회원가입.png';
-import fileUploadImg from '../../Assets/파일 업로드.png';
-import characterImg from '../../Assets/캐릭터.svg';
+import React, { ReactElement, useCallback, useRef, useState, useReducer } from 'react';
 import { useDropzone } from 'react-dropzone';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import CharacterButton from '../Button/CharacterButton';
 import {
   CharacterContainer,
   DropZoneDiv,
@@ -20,13 +20,12 @@ import {
   LoginMainContainer,
   ProfileContainer,
 } from './style';
-import { useState } from 'react';
-import CharacterButton from '../Button/CharacterButton';
-import axios from 'axios';
-import { useLocation } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import characterImg from '../../Assets/캐릭터.svg';
+import fileUploadImg from '../../Assets/파일 업로드.png';
+import singUpImg from '../../Assets/회원가입.png';
+import FloatInput from '../Input/Input';
 import { departmentList } from '../../Util/constants/constant';
-import { useReducer } from 'react';
+
 interface AvatarType {
   head: number;
   body: number;
@@ -49,7 +48,7 @@ const LoginInfoMain = (): ReactElement => {
   const phoneRef = useRef<HTMLInputElement>(null);
   const nickNameRef = useRef<HTMLInputElement>(null);
   const [department, setDepartment] = useState<string>('');
-  //image DropZone
+  // image DropZone
   const [image, setImage] = useState<string | null>(null);
   const [file, setFile] = useState<Blob | null>(null);
 

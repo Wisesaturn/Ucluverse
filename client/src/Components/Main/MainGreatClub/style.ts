@@ -2,64 +2,63 @@ import { PresignedPost } from 'aws-sdk/clients/s3';
 import styled from 'styled-components';
 
 export const ClubContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  width: 90%;
+  max-width: ${(props) => props.theme.layout.maxWidth};
+  margin: 0 auto;
+  margin-bottom: 10rem;
+
+  /* layout setting */
+  .layout {
+  }
+
+  .titleDiv {
     display: flex;
     flex-direction: column;
-    z-index: 1;
-    width : 90%;
-    max-width : ${(props) => props.theme.layout.maxWidth};
-    margin : 0 auto;
-    margin-bottom: 10rem;
+    margin-bottom: 3rem;
+  }
 
-    /* layout setting */
-    .layout {
-        
-    }
+  .title {
+    width: 13.625rem;
+    height: 2.25rem;
+    margin-bottom: 1rem;
+  }
 
-    .titleDiv {
-      display : flex;
-      flex-direction: column;
-      margin-bottom : 3rem;
-    }
+  span {
+    width: 22rem;
+    text-align: left;
+    font: normal normal normal 18px/1.5rem Noto Sans KR;
+    letter-spacing: -1.35px;
+    color: #a19279;
+    opacity: 1;
+  }
 
-    .title {
-      width: 13.625rem;
-      height: 2.25rem;
-      margin-bottom: 1rem;
-    }
-
+  a {
+    margin-top: 1rem;
     span {
-      width: 22rem;
-      text-align: left;
       font: normal normal normal 18px/1.5rem Noto Sans KR;
       letter-spacing: -1.35px;
-      color: #a19279;
+      color: #513c0e;
       opacity: 1;
     }
-    
-    a {
-        margin-top: 1rem;
-        span {
-          font: normal normal normal 18px/1.5rem Noto Sans KR;
-          letter-spacing: -1.35px;
-          color: #513c0e;
-          opacity: 1;
-        }
-    }
-  
+  }
+
   a:is(:link, :visited, :hover, :active) {
     text-decoration: none;
   }
 
   /* for mobiles */
   @media (max-width: 768px) {
-    max-width : 90vw;
-    width : 90vw;
+    max-width: 90vw;
+    width: 90vw;
 
     .titleDiv {
-      width : 90vw;
-      max-width : 90vw;
-      display : flex;
-      margin-left : 0;
+      width: 90vw;
+      max-width: 90vw;
+      display: flex;
+      margin-left: 0;
       align-items: center;
     }
 
@@ -71,7 +70,7 @@ export const ClubContainer = styled.section`
 
 export const ImgContainer = styled.div`
   overflow-x: scroll;
-  overflow-y : hidden;
+  overflow-y: hidden;
   height: 22.5rem;
   .overflow-container {
     display: inline-flex;
@@ -105,7 +104,8 @@ export const ImgContainer = styled.div`
         height: 40px;
         border: none;
         border-radius: 100% 0% 0% 0%;
-        background: transparent linear-gradient(180deg, #63239b 0%, #9239df 100%) 0% 0% no-repeat padding-box;
+        background: transparent linear-gradient(180deg, #63239b 0%, #9239df 100%) 0% 0% no-repeat
+          padding-box;
         box-shadow: 1px 1px 4px #a45de2;
         background-color: black;
         span {
@@ -129,7 +129,7 @@ export const ImgContainer = styled.div`
       width: 24.125rem;
       height: 18.75rem;
       background: transparent 0% 0% no-repeat padding-box;
-      box-shadow: 0px 10px .625rem var(--shadow-purple-0);
+      box-shadow: 0px 10px 0.625rem var(--shadow-purple-0);
       border-radius: 5px;
       opacity: 1;
       button {
@@ -155,7 +155,7 @@ export const ImgContainer = styled.div`
 
   /* for mobiles */
   @media (max-width: 768px) {
-    margin : 0 auto;
-    margin-top : 2rem;
+    margin: 0 auto;
+    margin-top: 2rem;
   }
 `;

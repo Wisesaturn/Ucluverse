@@ -1,11 +1,17 @@
-import React, { ChangeEvent, ChangeEventHandler, ReactElement, useRef, useState } from 'react';
+import React, {
+  ChangeEvent,
+  ChangeEventHandler,
+  ReactElement,
+  useRef,
+  useState,
+  useEffect,
+} from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { Link } from 'react-router-dom';
 import { SearchBarDiv, SearchDataContainer, SearchBarContainer } from './style';
 import serchIconImg from '../../../Assets/검색아이콘.svg';
-import { useRecoilState, useRecoilValue } from 'recoil';
 import { ClubListState, DepartmentListState } from '../../../Recoil/Club';
 import { ClubType } from '../../../Types/ClubType';
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 const SearchBar = (): ReactElement => {
   const clubList = useRecoilValue(ClubListState);
@@ -19,7 +25,10 @@ const SearchBar = (): ReactElement => {
     setSearchDataList(
       [...clubList, ...departmentClubList]
         .filter((club) => {
-          return club.name.toString().toLowerCase().includes(e.target.value.toString().toLowerCase());
+          return club.name
+            .toString()
+            .toLowerCase()
+            .includes(e.target.value.toString().toLowerCase());
         })
         .sort(sortFunction),
     );
@@ -35,11 +44,11 @@ const SearchBar = (): ReactElement => {
       b.toLowerCase().substring(0, len) === keywordLowerCase
     ) {
       return 0;
-    } else if (a.toLowerCase().substring(0, len) === keywordLowerCase) {
-      return -1;
-    } else {
-      return b.toLowerCase().substring(0, len) === keywordLowerCase ? 1 : 0;
     }
+    if (a.toLowerCase().substring(0, len) === keywordLowerCase) {
+      return -1;
+    }
+    return b.toLowerCase().substring(0, len) === keywordLowerCase ? 1 : 0;
   };
 
   const handleSearch = (e: MouseEvent) => {
@@ -51,11 +60,12 @@ const SearchBar = (): ReactElement => {
   }, []);
 
   const letterEmphasis = (name: string) => {
-    var pattern = new RegExp(keyword, 'i');
+    const pattern = new RegExp(keyword, 'i');
     const matchString = name.match(pattern);
 
-    if (matchString && matchString.length !== 0)
+    if (matchString && matchString.length !== 0) {
       return name.replace(matchString[0], `<strong>${matchString[0]}</strong>`);
+    }
 
     return '';
   };

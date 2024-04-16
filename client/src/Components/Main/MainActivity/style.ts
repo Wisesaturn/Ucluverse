@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const ActivityContainer = styled.section`
-
   article {
     display: flex;
     flex-direction: column;

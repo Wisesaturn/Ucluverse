@@ -20,9 +20,26 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
+    /**
+      fix eslint errors
+    */
+    "@typescript-eslint/no-empty-interface": "off",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "no-return-assign": "off",
+    "curly": "off",
+    "no-unused-vars": "off",
+    "no-confusing-arrow": "off",
+     "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    /****************************************/
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
-    // "operator-linebreak": ["error", "before"],
+    "linebreak-style": "off",
     "arrow-body-style": "off",
     "no-nested-ternary": "off",
     "no-underscore-dangle": "off",
@@ -38,13 +55,11 @@
         "tsx": "never"
       }
     ],
-    "prettier/prettier": "error",
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "import/no-cycle": "off",
     "indent": "off",
     "object-curly-newline": "off"
-    // "array-callback-return": "off"
   },
   "settings": {
     "import/resolver": {

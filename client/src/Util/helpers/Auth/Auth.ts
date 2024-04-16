@@ -6,7 +6,7 @@ import { getCookieToken, removeCookieToken, setRefreshToken } from './Cookie';
 
 const JWT_EXPIRY_TIME = 24 * 3600 * 1000; // 만료 시간 (24시간 밀리 초로 표현)
 
-export const onLogin = (email: String) => {
+export const onLogin = (email: string) => {
   api.get(`/auth/login?email=${email}`).then((res) => {
     if (res.data.status === 1) {
       window.location.replace(`/login/info?email=${email}`);
@@ -21,7 +21,7 @@ export const onLogin = (email: String) => {
 
 export const onLogout = () => {
   const [user, setUser] = useRecoilState(userState);
-  api.get(`/auth/logout`).then((res) => {
+  api.get('/auth/logout').then((res) => {
     setUser({
       userIdx: 0,
       name: '',
@@ -50,7 +50,9 @@ export const onRefreshUpdate = () => {
   api
     .post('/silent-refresh', { refreshToken })
     .then(onLoginSuccess)
-    .catch((error) => {});
+    .catch((error) => {
+      console.log(error);
+    });
   return true;
 };
 
@@ -58,5 +60,5 @@ export const onLoginSuccess = (response: any) => {
   const setUser = useSetRecoilState(userState);
   const { accessToken, ...userData } = response.data.user;
   setUser(userData);
-  axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+  axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
 };

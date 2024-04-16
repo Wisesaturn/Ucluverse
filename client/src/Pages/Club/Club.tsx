@@ -1,10 +1,7 @@
 import axios from 'axios';
-import React, { ReactElement } from 'react';
-import { createContext } from 'react';
-import { useContext } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React, { ReactElement, createContext, useContext, useState, useEffect } from 'react';
 import { Route, Routes, useLocation, useParams } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil';
 import ClubBoard from '../../Components/Club/Board/ClubBoard';
 import ClubHeader from '../../Components/Club/Header/ClubHeader';
 import ClubMain from '../../Components/Club/Main/ClubMain';
@@ -14,7 +11,6 @@ import ClubSideBar from '../../Components/Club/SideBar/ClubSideBar';
 import Header from '../../Components/Header/Header';
 import { ClubType } from '../../Types/ClubType';
 import { ActivityPostType, BoardType } from '../../Types/PostType';
-import { useSetRecoilState } from 'recoil';
 import { theme } from '../../Recoil/Theme';
 import api from '../../Util/helpers/Auth/Api';
 
@@ -42,10 +38,13 @@ const Club = (): ReactElement => {
     api.get(`/clubs/club/${clubId}`).then((res) => {
       setClub(res.data.res.clubs);
       const clubBoards = res.data.res.clubs.clubBoards[0];
-      AboutList.map((boardName) => {
-        setAboutBoards((AboutBoards) => [...AboutBoards, { name: boardName, boardIdx: clubBoards[boardName] }]);
+      AboutList.forEach((boardName) => {
+        setAboutBoards((AboutBoards) => [
+          ...AboutBoards,
+          { name: boardName, boardIdx: clubBoards[boardName] },
+        ]);
       });
-      CommunicationList.map((boardName) => {
+      CommunicationList.forEach((boardName) => {
         setCommunicationBoards((CommunicationBoards) => [
           ...CommunicationBoards,
           { name: boardName, boardIdx: clubBoards[boardName] },
@@ -61,7 +60,11 @@ const Club = (): ReactElement => {
       <ClubContext.Provider value={{ club, activityList }}>
         <Header />
         <div style={{ marginBottom: '130px' }}>
-          <ClubHeader title={club?.name ?? ''} hashtags={club?.clubCategories ?? []} clubId={clubId} />
+          <ClubHeader
+            title={club?.name ?? ''}
+            hashtags={club?.clubCategories ?? []}
+            clubId={clubId}
+          />
           <div style={{ display: 'flex' }}>
             <ClubSideBar
               clubId={clubId}

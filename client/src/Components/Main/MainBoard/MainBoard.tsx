@@ -1,6 +1,7 @@
 import React, { ReactElement, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { MainBoardDiv } from './style';
+
 interface props {
   imgURL: string;
   posts: post[];

@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { MainHeaderDiv } from './style';
 import mainHeaderContentImg from '../../../Assets/메인헤더글.svg';
 import SearchBar from './SearchBar';
-import {useScrollFadeIn, useLottie} from '../../../Hooks';
+import { useScrollFadeIn, useLottie } from '../../../Hooks';
 import firework from '../../../Assets/Lottie/firework.json';
 import firework2 from '../../../Assets/Lottie/firework0.5s.json';
 import birds from '../../../Assets/Lottie/birds.json';
@@ -18,10 +18,10 @@ const MainHeader = (): ReactElement => {
 
   return (
     <MainHeaderDiv>
-      <div id="lottie" {...lottieFireWork}/>
-      <div id="lottie2" {...lottieFireWork2}/>
-      <div id="lottie3" {...lottieBirds}/>
-      <div id="lottieBG" {...lottieBGMain}/>
+      <div id="lottie" {...lottieFireWork} />
+      <div id="lottie2" {...lottieFireWork2} />
+      <div id="lottie3" {...lottieBirds} />
+      <div id="lottieBG" {...lottieBGMain} />
       <div className="content">
         <article {...animation}>
           <img src={mainHeaderContentImg} className="main-header" />

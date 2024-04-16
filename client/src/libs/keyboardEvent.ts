@@ -1,4 +1,4 @@
-/*eslint-env es6*/
+/* eslint-env es6 */
 const gaugeState = (state: any) => (state === 'mid' ? 'left' : state === 'left' ? 'right' : 'left');
 const danceList = ['leftUp', 'rightMid', 'rightUp', 'leftMid'];
 
@@ -17,10 +17,10 @@ const moveDistance = 20;
 
 const direction: any = {
   ArrowRight: {
-    background: function (props: any): any {
+    background(props: any): any {
       return { top: props.top, left: props.left - moveDistance };
     },
-    character: function (props: any): any {
+    character(props: any): any {
       return {
         name: props.name,
         x: props.x + moveDistance,
@@ -32,10 +32,10 @@ const direction: any = {
     },
   },
   ArrowLeft: {
-    background: function (props: any): any {
+    background(props: any): any {
       return { top: props.top, left: props.left + moveDistance };
     },
-    character: function (props: any): any {
+    character(props: any): any {
       return {
         name: props.name,
         x: props.x - moveDistance,
@@ -47,10 +47,10 @@ const direction: any = {
     },
   },
   ArrowUp: {
-    background: function (props: any): any {
+    background(props: any): any {
       return { top: props.top + moveDistance, left: props.left };
     },
-    character: function (props: any): any {
+    character(props: any): any {
       return {
         name: props.name,
         x: props.x,
@@ -62,10 +62,10 @@ const direction: any = {
     },
   },
   ArrowDown: {
-    background: function (props: any): any {
+    background(props: any): any {
       return { top: props.top - moveDistance, left: props.left };
     },
-    character: function (props: any): any {
+    character(props: any): any {
       return {
         name: props.name,
         x: props.x,
@@ -77,10 +77,10 @@ const direction: any = {
     },
   },
   KeyZ: {
-    background: function () {
+    background() {
       return this;
     },
-    character: function (props: any): any {
+    character(props: any): any {
       return {
         name: props.name,
         x: props.x,

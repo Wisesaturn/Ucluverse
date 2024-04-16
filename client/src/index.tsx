@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyles, theme } from './styles';
 import { RecoilRoot } from 'recoil';
+import { GlobalStyles, theme } from './styles';
 import App from './App';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -14,10 +14,10 @@ ReactDOM.render(
     <RecoilRoot>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-      <Router>
-        <ScrollToTop />
-        <App />
-      </Router>
+        <Router>
+          <ScrollToTop />
+          <App />
+        </Router>
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>,

@@ -1,10 +1,10 @@
 import React, { ReactElement, useEffect, useRef, useState } from 'react';
-import { AwardContainer, AwardDiv } from './style';
-import awardHeaderImg from '../../../Assets/수상내역.png';
 import Slider from 'react-slick';
-import { AwardPostType } from '../../../Types/PostType';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { AwardContainer, AwardDiv } from './style';
+import awardHeaderImg from '../../../Assets/수상내역.png';
+import { AwardPostType } from '../../../Types/PostType';
 import { Wave } from '../../Animation';
 import api from '../../../Util/helpers/Auth/Api';
 
@@ -18,10 +18,10 @@ const MainAward = (): ReactElement => {
 
   const settings = {
     dots: false,
-    infinite: awardList.length > 5 ? true : false,
+    infinite: awardList.length > 5,
     autoplay: true,
     speed: 500,
-    centerMode: awardList.length > 5 ? true : false,
+    centerMode: awardList.length > 5,
     slidesToShow: 5,
     slidesToScroll: 1,
   };
@@ -44,8 +44,8 @@ const MainAward = (): ReactElement => {
                   <div>
                     <span>{award.awardTitle}</span>
                     <span>{award.awardName}</span>
-                    <div className={`award-border`}></div>
-                    <span className={`award-detail`}>{award.awardContent}</span>
+                    <div className={'award-border'}></div>
+                    <span className={'award-detail'}>{award.awardContent}</span>
                   </div>
                 </div>
               </AwardDiv>
